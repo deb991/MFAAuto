@@ -1,0 +1,10 @@
+2021-05-14 03:24:55,508:DEBUG:POST http://127.0.0.1:9768/session/e6ee430dbfe021d24d6be39c44a8d61d/element {"using": "css selector", "value": ".form-control"}
+2021-05-14 03:24:55,534:DEBUG:http://127.0.0.1:9768 "POST /session/e6ee430dbfe021d24d6be39c44a8d61d/element HTTP/1.1" 200 88
+2021-05-14 03:24:55,534:DEBUG:Finished Request
+2021-05-14 03:24:55,542:DEBUG:element-find: <selenium.webdriver.remote.webelement.WebElement (session="e6ee430dbfe021d24d6be39c44a8d61d", element="b12338af-3225-4b3b-88e7-b016fddfaadc")>
+2021-05-14 03:24:55,542:DEBUG:POST http://127.0.0.1:9768/session/e6ee430dbfe021d24d6be39c44a8d61d/element/b12338af-3225-4b3b-88e7-b016fddfaadc/value {"text": "debashis.d.biswas@shell.com", "value": ["d", "e", "b", "a", "s", "h", "i", "s", ".", "d", ".", "b", "i", "s", "w", "a", "s", "@", "s", "h", "e", "l", "l", ".", "c", "o", "m"], "id": "b12338af-3225-4b3b-88e7-b016fddfaadc"}
+2021-05-14 03:24:55,658:DEBUG:http://127.0.0.1:9768 "POST /session/e6ee430dbfe021d24d6be39c44a8d61d/element/b12338af-3225-4b3b-88e7-b016fddfaadc/value HTTP/1.1" 200 14
+2021-05-14 03:24:55,658:DEBUG:Finished Request
+2021-05-14 03:24:55,659:DEBUG:POST http://127.0.0.1:9768/session/e6ee430dbfe021d24d6be39c44a8d61d/element/b12338af-3225-4b3b-88e7-b016fddfaadc/value {"text": "enter", "value": ["e", "n", "t", "e", "r"], "id": "b12338af-3225-4b3b-88e7-b016fddfaadc"}
+2021-05-14 03:24:55,718:DEBUG:http://127.0.0.1:9768 "POST /session/e6ee430dbfe021d24d6be39c44a8d61d/element/b12338af-3225-4b3b-88e7-b016fddfaadc/value HTTP/1.1" 200 14
+2021-05-14 03:24:55,719:DEBUG:Finished Request
