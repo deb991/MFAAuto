@@ -9,6 +9,7 @@ import logging
 import os
 
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 browser = webdriver.Chrome("C:\\Users\\Debashis.D.Biswas\\Documents\\pkgs\\chromedriver\\chromedriver.exe")
 browser.get("https://app.welcomesoftware.com/cloud/settings/userManagement")
@@ -23,17 +24,12 @@ def usrOps():
     #print("Session start @ ", strftime("%m-%d-%y, %H-%M-%S"))
     mailInput = browser.find_element_by_class_name("form-control")
     logging.debug("element-find: {}".format(mailInput))
-
     mailInput.send_keys("debashis.d.biswas@shell.com")
-    mailInput.send_keys('enter')
+
+    #enterButt =
+    browser.find_element_by_xpath("/html/body/section/main/div/form/div[2]/button").send_keys(Keys.ENTER)
 
 
-
-    #print("Session Ends @ ", strftime("%m-%d-%yy, %H-%M-%S"))
-
-
-
-    #enter_usr = browser.find_element_by_id('Continue').send_keys('enter')
 
 
 

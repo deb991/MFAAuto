@@ -5,11 +5,10 @@ __URL__ = 'https://github.com/deb991/'
 __NB__ = 'For more information, please see github page & all commit details.'
 __CipherSig__ = 'This project & all associate files are encrypted under PBEncryption cryptography. Another details will be available at the end of this pgogram.'
 
-import os
-import sys
-import win32com.client
 import datetime as dt
 import re
+
+import win32com.client
 
 ##Current time
 curTime = dt.datetime.now()
@@ -58,7 +57,25 @@ def usrInbox():
         for inboxMail in lastQtrMessages:
             if inboxMail.unread == True:
                 print('Initiating Main process -- flag 1.1')
-                mfaSrch = re.search("^mfa", inboxMail.body)
+                mfaSrch = re.search(r"MFA", inboxMail.body)
+                mfaSrch_small = re.search(r"mfa", inboxMail.body)
+                if mfaSrch:
+                    print('Match found>>> \t')
+                    print(mfaSrch.group())
+                    print("<<Email extraction started >>")
+                    mailIDs = re.findall('\S+@\S+', inboxMail.body)
+                    print(mailIDs)
+
+
+
+                elif mfaSrch_small:
+                    print('Match found in small Case >>> \t')
+                    print(mfaSrch_small.group())
+                    print("<<Email extraction started for small case >>")
+                    mailIDs = re.findall('\S+@\S+', inboxMail.body)
+                    print(mailIDs)
+                    break
+
 
 
 
@@ -68,11 +85,6 @@ def usrInbox():
 
 
     print('\tEOF')
-
-
-
-
-
 
 
 if __name__ == '__main__':

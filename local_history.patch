@@ -1,0 +1,42 @@
+Index: newsCred__test/__init__.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- newsCred__test/__init__.py	(date 1620945349207)
++++ newsCred__test/__init__.py	(date 1620945349207)
+@@ -5,13 +5,10 @@
+ __NB__ = 'For more information, please see github page & all commit details.'
+ __CipherSig__ = 'This project & all associate files are encrypted under PBEncryption cryptography. Another details will be available at the end of this pgogram.'
+ 
++import logging
+ import os
+-import sys
++
+ from selenium import webdriver
+-from selenium.webdriver.support import expected_conditions as EC
+-from selenium.webdriver.common.keys import Keys
+-from time import sleep, strftime
+-import logging
+ 
+ browser = webdriver.Chrome("C:\\Users\\Debashis.D.Biswas\\Documents\\pkgs\\chromedriver\\chromedriver.exe")
+ browser.get("https://app.welcomesoftware.com/cloud/settings/userManagement")
+@@ -30,17 +27,10 @@
+     mailInput.send_keys("debashis.d.biswas@shell.com")
+     mailInput.send_keys('enter')
+ 
+-
++    
+ 
+ 
+-    #print("Session Ends @ ", strftime("%m-%d-%yy, %H-%M-%S"))
+ 
+-
+-
+-    #enter_usr = browser.find_element_by_id('Continue').send_keys('enter')
+-
+-
+-
+ #browser.quit()
+ 
+ if __name__ == '__main__':
