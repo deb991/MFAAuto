@@ -36,7 +36,7 @@ def usrInbox():
     inboxMail = inboxMails.GetFirst()
     inboxMail_count = inboxMails.count
     inboxMail_Sub = inboxMail.Subject
-    # inboxMail_body = inboxMail.body
+    inboxMail_body = inboxMail.body
 
     # Flag: 1 ::::::::::::::::::::::
     print('>>>>>>>>>Inbox checking<<<<<<<<')
@@ -47,7 +47,7 @@ def usrInbox():
 
     for inboxMail in lastQtrMessages:
         print(inboxMail_Sub)
-        print(inboxMail.ReceivedTime)
+        #print(inboxMail.ReceivedTime)
         inboxMail = lastQtrMessages.GetFirst()
         inboxMail_iter = lastQtrMessages.GetNext()
         print('\n')
@@ -57,26 +57,72 @@ def usrInbox():
         for inboxMail in lastQtrMessages:
             if inboxMail.unread == True:
                 print('Initiating Main process -- flag 1.1')
-                mfaSrch = re.search(r"MFA", inboxMail.body)
+                mfaSrch = re.search(r"MFA", inboxMail.body) #Used
                 mfaSrch_small = re.search(r"mfa", inboxMail.body)
-                if mfaSrch:
-                    print('Match found>>> \t')
-                    print(mfaSrch.group())
-                    print("<<Email extraction started >>")
-                    mailIDs = re.findall('\S+@\S+', inboxMail.body)
-                    print(mailIDs)
+
+                newsCredSubMFA = re.search(r'MFA', inboxMail.Subject)  #Used
+                newsCredSubApp = re.search(r'News', inboxMail.Subject) #Used
+
+                newsCredSubKWrdA = re.search(r'mfa', inboxMail.Subject) #Used
+                newsCredSubKWrdB = re.search(r'Cred', inboxMail.Subject) #Used
+
+                newsCredSubKWrdC = re.search(r'authentication', inboxMail.Subject)
+                newsCredSubKWrdD = re.search(r'authenticator', inboxMail.Subject)
+
+                newsCredSubKWrdE = re.search(r'denied', inboxMail.Subject)
+                newsCredSubKWrdF = re.search(r'Shell Brand Applications', inboxMail.Subject)
+
+                newsCredSubKWrdG = re.search(r'login', inboxMail.Subject)
+                newsCredSubKWrdH = re.search(r'account', inboxMail.Subject)
+
+                newsCredSubKWrdI = re.search(r'Lost', inboxMail.Subject)
+                newsCredSubKWrdJ = re.search(r'mfa$', inboxMail.Subject)
+
+                newsCredSubKWrdK = re.search(r'MFA Support', inboxMail.Subject)
+
+                newsCredSender = re.search(r'creativehub@shell.com', inboxMail.SenderEmailAddress)
 
 
-
-                elif mfaSrch_small:
-                    print('Match found in small Case >>> \t')
-                    print(mfaSrch_small.group())
-                    print("<<Email extraction started for small case >>")
-                    mailIDs = re.findall('\S+@\S+', inboxMail.body)
-                    print(mailIDs)
+                if newsCredSender:
+                    print('First checking Mail sender :: ')
+                    print(newsCredSender)
                     break
 
 
+
+
+                #if mfaSrch:
+                #    print('Match found>>> \t')
+                #    print(mfaSrch.group())
+                #    print("<<Email extraction started >>")
+                #    mailIDs = re.findall('\S+@\S+', inboxMail.body)
+                #    print(mailIDs)
+                #    print(newsCredSender)
+
+                if newsCredSubMFA or newsCredSubKWrdA:
+                    print('Match found MFA/ mfa keyword >>')
+                    print(newsCredSubMFA.group() or newsCredSubKWrdA.group())
+                    mailIDs = re.findall('\S+@\S+', inboxMail.body)
+                    print(mailIDs)
+                    print(newsCredSender)
+
+
+
+                #elif mfaSrch_small:
+                #    print('Match found in small Case >>> \t')
+                #    print(mfaSrch_small.group())
+                #    print("<<Email extraction started for small case >>")
+                #    mailIDs = re.findall('\S+@\S+', inboxMail.body)
+                #    print(mailIDs)
+                #    print(newsCredSender)
+                #    break
+
+                elif  newsCredSubApp or newsCredSubKWrdB:
+                    print('Match found APP Name keyword >>')
+                    print(newsCredSubMFA.group() or newsCredSubKWrdA.group())
+                    mailIDs = re.findall('\S+@\S+', inboxMail.body)
+                    print(mailIDs)
+                    print(newsCredSender)
 
 
         break

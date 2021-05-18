@@ -140,3 +140,16 @@
 2021-05-17 11:45:06,445:DEBUG:POST http://127.0.0.1:8702/session/d72597972865de97472bc56505a8b432/element/f39d588f-973f-49a1-9703-ea5066f533fc/value {"text": "\ue007", "value": ["\ue007"], "id": "f39d588f-973f-49a1-9703-ea5066f533fc"}
 2021-05-17 11:45:12,438:DEBUG:http://127.0.0.1:8702 "POST /session/d72597972865de97472bc56505a8b432/element/f39d588f-973f-49a1-9703-ea5066f533fc/value HTTP/1.1" 200 14
 2021-05-17 11:45:12,439:DEBUG:Finished Request
+2021-05-18 17:07:08,289:DEBUG:POST http://127.0.0.1:5947/session/af0c3b0ed8359937251fd0b380380729/element {"using": "css selector", "value": ".form-control"}
+2021-05-18 17:07:08,348:DEBUG:http://127.0.0.1:5947 "POST /session/af0c3b0ed8359937251fd0b380380729/element HTTP/1.1" 200 88
+2021-05-18 17:07:08,348:DEBUG:Finished Request
+2021-05-18 17:07:08,349:DEBUG:element-find: <selenium.webdriver.remote.webelement.WebElement (session="af0c3b0ed8359937251fd0b380380729", element="0874e03d-b894-4c90-953e-67b5fed32087")>
+2021-05-18 17:07:08,349:DEBUG:POST http://127.0.0.1:5947/session/af0c3b0ed8359937251fd0b380380729/element/0874e03d-b894-4c90-953e-67b5fed32087/value {"text": "debashis.d.biswas@shell.com", "value": ["d", "e", "b", "a", "s", "h", "i", "s", ".", "d", ".", "b", "i", "s", "w", "a", "s", "@", "s", "h", "e", "l", "l", ".", "c", "o", "m"], "id": "0874e03d-b894-4c90-953e-67b5fed32087"}
+2021-05-18 17:07:08,689:DEBUG:http://127.0.0.1:5947 "POST /session/af0c3b0ed8359937251fd0b380380729/element/0874e03d-b894-4c90-953e-67b5fed32087/value HTTP/1.1" 200 14
+2021-05-18 17:07:08,689:DEBUG:Finished Request
+2021-05-18 17:07:08,690:DEBUG:POST http://127.0.0.1:5947/session/af0c3b0ed8359937251fd0b380380729/element {"using": "xpath", "value": "/html/body/section/main/div/form/div[2]/button"}
+2021-05-18 17:07:08,735:DEBUG:http://127.0.0.1:5947 "POST /session/af0c3b0ed8359937251fd0b380380729/element HTTP/1.1" 200 88
+2021-05-18 17:07:08,735:DEBUG:Finished Request
+2021-05-18 17:07:08,736:DEBUG:POST http://127.0.0.1:5947/session/af0c3b0ed8359937251fd0b380380729/element/90c7aa79-053e-419e-874e-a451a45da819/value {"text": "\ue007", "value": ["\ue007"], "id": "90c7aa79-053e-419e-874e-a451a45da819"}
+2021-05-18 17:07:12,281:DEBUG:http://127.0.0.1:5947 "POST /session/af0c3b0ed8359937251fd0b380380729/element/90c7aa79-053e-419e-874e-a451a45da819/value HTTP/1.1" 200 14
+2021-05-18 17:07:12,282:DEBUG:Finished Request
