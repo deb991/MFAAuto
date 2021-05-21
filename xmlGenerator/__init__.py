@@ -8,14 +8,28 @@ __CipherSig__ = 'This project & all associate files are encrypted under PBEncryp
 import os
 import xml.etree.cElementTree as ET
 
-root = ET.Element("root")
-doc = ET.SubElement(root, "doc")
+def analystCred():
+    root = ET.Element("root")
+    doc = ET.SubElement(root, "doc")
 
-ET.SubElement(doc, "mailID", usrMail='').text = "debashis.d.biswas@shell.com"
-ET.SubElement(doc, "DistributionList", DL='').text = "somwpro@shell.com"
+    ET.SubElement(doc, "mailID", usrMail='').text = "debashis.d.biswas@shell.com"
+    ET.SubElement(doc, "DistributionList", DL='').text = "somwpro@shell.com"
 
-tree = ET.ElementTree(root)
+    tree = ET.ElementTree(root)
 
-os.chdir("..\\res")
+    os.chdir("..\\res")
 
-tree.write("main.xml")
+    tree.write("main.xml")
+
+def mailExtrct():
+    root = ET.Element("root")
+    doc = ET.SubElement(root, "doc")
+
+    ET.SubElement(doc, "mailID", usrMail='').text = "debashis.d.biswas@shell.com"
+    ET.SubElement(doc, "DistributionList", DL='').text = "somwpro@shell.com"
+
+    tree = ET.ElementTree(root)
+
+    os.chdir("..\\res")
+
+    tree.write("analystCred.xml")

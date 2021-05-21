@@ -153,3 +153,29 @@
 2021-05-18 17:07:08,736:DEBUG:POST http://127.0.0.1:5947/session/af0c3b0ed8359937251fd0b380380729/element/90c7aa79-053e-419e-874e-a451a45da819/value {"text": "\ue007", "value": ["\ue007"], "id": "90c7aa79-053e-419e-874e-a451a45da819"}
 2021-05-18 17:07:12,281:DEBUG:http://127.0.0.1:5947 "POST /session/af0c3b0ed8359937251fd0b380380729/element/90c7aa79-053e-419e-874e-a451a45da819/value HTTP/1.1" 200 14
 2021-05-18 17:07:12,282:DEBUG:Finished Request
+2021-05-19 20:42:33,493:DEBUG:POST http://127.0.0.1:6104/session/c8889295b81992cfef542454f748d7ab/element {"using": "css selector", "value": ".form-control"}
+2021-05-19 20:42:33,548:DEBUG:http://127.0.0.1:6104 "POST /session/c8889295b81992cfef542454f748d7ab/element HTTP/1.1" 200 88
+2021-05-19 20:42:33,551:DEBUG:Finished Request
+2021-05-19 20:42:33,552:DEBUG:element-find: <selenium.webdriver.remote.webelement.WebElement (session="c8889295b81992cfef542454f748d7ab", element="fb33444e-094a-4ff2-b918-94853438edca")>
+2021-05-19 20:42:33,553:DEBUG:POST http://127.0.0.1:6104/session/c8889295b81992cfef542454f748d7ab/element/fb33444e-094a-4ff2-b918-94853438edca/value {"text": "debashis.d.biswas@shell.com", "value": ["d", "e", "b", "a", "s", "h", "i", "s", ".", "d", ".", "b", "i", "s", "w", "a", "s", "@", "s", "h", "e", "l", "l", ".", "c", "o", "m"], "id": "fb33444e-094a-4ff2-b918-94853438edca"}
+2021-05-19 20:42:33,717:DEBUG:http://127.0.0.1:6104 "POST /session/c8889295b81992cfef542454f748d7ab/element/fb33444e-094a-4ff2-b918-94853438edca/value HTTP/1.1" 200 14
+2021-05-19 20:42:33,718:DEBUG:Finished Request
+2021-05-19 20:42:33,718:DEBUG:POST http://127.0.0.1:6104/session/c8889295b81992cfef542454f748d7ab/element {"using": "xpath", "value": "/html/body/section/main/div/form/div[2]/button"}
+2021-05-19 20:42:33,739:DEBUG:http://127.0.0.1:6104 "POST /session/c8889295b81992cfef542454f748d7ab/element HTTP/1.1" 200 88
+2021-05-19 20:42:33,741:DEBUG:Finished Request
+2021-05-19 20:42:33,741:DEBUG:POST http://127.0.0.1:6104/session/c8889295b81992cfef542454f748d7ab/element/8b1e23d1-3235-42b6-a252-80db2fe6a87c/value {"text": "\ue007", "value": ["\ue007"], "id": "8b1e23d1-3235-42b6-a252-80db2fe6a87c"}
+2021-05-19 20:42:38,953:DEBUG:http://127.0.0.1:6104 "POST /session/c8889295b81992cfef542454f748d7ab/element/8b1e23d1-3235-42b6-a252-80db2fe6a87c/value HTTP/1.1" 200 14
+2021-05-19 20:42:38,954:DEBUG:Finished Request
+2021-05-19 20:48:01,159:DEBUG:POST http://127.0.0.1:6537/session/570c11b14cc8ef5c831aaa5cf3fb56db/element {"using": "css selector", "value": ".form-control"}
+2021-05-19 20:48:01,209:DEBUG:http://127.0.0.1:6537 "POST /session/570c11b14cc8ef5c831aaa5cf3fb56db/element HTTP/1.1" 200 88
+2021-05-19 20:48:01,211:DEBUG:Finished Request
+2021-05-19 20:48:01,212:DEBUG:element-find: <selenium.webdriver.remote.webelement.WebElement (session="570c11b14cc8ef5c831aaa5cf3fb56db", element="a406bd53-69fe-4759-aaf2-025cf216f9f8")>
+2021-05-19 20:48:01,212:DEBUG:POST http://127.0.0.1:6537/session/570c11b14cc8ef5c831aaa5cf3fb56db/element/a406bd53-69fe-4759-aaf2-025cf216f9f8/value {"text": "debashis.d.biswas@shell.com", "value": ["d", "e", "b", "a", "s", "h", "i", "s", ".", "d", ".", "b", "i", "s", "w", "a", "s", "@", "s", "h", "e", "l", "l", ".", "c", "o", "m"], "id": "a406bd53-69fe-4759-aaf2-025cf216f9f8"}
+2021-05-19 20:48:01,548:DEBUG:http://127.0.0.1:6537 "POST /session/570c11b14cc8ef5c831aaa5cf3fb56db/element/a406bd53-69fe-4759-aaf2-025cf216f9f8/value HTTP/1.1" 200 14
+2021-05-19 20:48:01,549:DEBUG:Finished Request
+2021-05-19 20:48:01,549:DEBUG:POST http://127.0.0.1:6537/session/570c11b14cc8ef5c831aaa5cf3fb56db/element {"using": "xpath", "value": "/html/body/section/main/div/form/div[2]/button"}
+2021-05-19 20:48:01,578:DEBUG:http://127.0.0.1:6537 "POST /session/570c11b14cc8ef5c831aaa5cf3fb56db/element HTTP/1.1" 200 88
+2021-05-19 20:48:01,578:DEBUG:Finished Request
+2021-05-19 20:48:01,579:DEBUG:POST http://127.0.0.1:6537/session/570c11b14cc8ef5c831aaa5cf3fb56db/element/b2a3abd6-8fbd-4c7e-8681-8ce2c63574a4/value {"text": "\ue007", "value": ["\ue007"], "id": "b2a3abd6-8fbd-4c7e-8681-8ce2c63574a4"}
+2021-05-19 20:48:06,707:DEBUG:http://127.0.0.1:6537 "POST /session/570c11b14cc8ef5c831aaa5cf3fb56db/element/b2a3abd6-8fbd-4c7e-8681-8ce2c63574a4/value HTTP/1.1" 200 14
+2021-05-19 20:48:06,708:DEBUG:Finished Request

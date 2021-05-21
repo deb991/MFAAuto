@@ -18,17 +18,15 @@ lastQtrTIme = dt.datetime.now() - dt.timedelta(minutes=30)
 outlook = win32com.client.Dispatch("Outlook.application")
 mapi = outlook.GetNamespace("MAPI")
 
+for stor in win32com.client.Dispatch("Outlook.Application").Session.Stores:
+    #print('\nDisplaying FMB names\t')
+    print('\nstor.DisplayName\t')
+    print( stor.DisplayName)
+    #print('\t\nEnd of Display Name')
+    break
+
 Inbox = mapi.Folders["debashis.d.biswas@shell.com"].Folders['Inbox']
 ##~~~~~~~~~~~~~~~User Inbox Details~~~~~~~~~~~~~~~~~##
-
-##Find other Mail Boxes
-
-for stor in win32com.client.Dispatch("Outlook.Application").Session.Stores:
-    print('\nDisplaying FMB names\t')
-    print( stor.DisplayName)
-    print('\t\nEnd of Display Name')
-
-##EOF
 
 def usrInbox():
     inboxMails = Inbox.items
@@ -40,7 +38,7 @@ def usrInbox():
 
     # Flag: 1 ::::::::::::::::::::::
     print('>>>>>>>>>Inbox checking<<<<<<<<')
-    print(inboxMail, "\nMail Count:", inboxMail_count, '\n', inboxMail_Sub, '\n')
+    #print(inboxMail, "\nMail Count:", inboxMail_count, '\n', inboxMail_Sub, '\n')
     ##==============================
 
     lastQtrMessages = inboxMails.Restrict("[ReceivedTime] >= '" + lastQtrTIme.strftime('%m/%d/%Y %H:%M %p') + "'")
@@ -57,8 +55,15 @@ def usrInbox():
         for inboxMail in lastQtrMessages:
             if inboxMail.unread == True:
                 print('Initiating Main process -- flag 1.1')
-                mfaSrch = re.search(r"MFA", inboxMail.body) #Used
-                mfaSrch_small = re.search(r"mfa", inboxMail.body)
+
+                newsCredSender = re.search(r'creativehub', inboxMail.SenderEmailAddress)
+                newsCredSenderATShell = re.search(r'@shell', inboxMail.SenderEmailAddress)
+
+                newsCredSenderDEMO = re.search(r'debashis', inboxMail.SenderEmailAddress) #Used
+                newsCredSenderDEMOATShell = re.search(r'@shell.com', inboxMail.SenderEmailAddress)   #Used
+
+                mfaSrch = re.search(r"MFA", bodyData) #Used
+                mfaSrch_small = re.search(r"mfa", bodyData)
 
                 newsCredSubMFA = re.search(r'MFA', inboxMail.Subject)  #Used
                 newsCredSubApp = re.search(r'News', inboxMail.Subject) #Used
@@ -66,29 +71,24 @@ def usrInbox():
                 newsCredSubKWrdA = re.search(r'mfa', inboxMail.Subject) #Used
                 newsCredSubKWrdB = re.search(r'Cred', inboxMail.Subject) #Used
 
-                newsCredSubKWrdC = re.search(r'authentication', inboxMail.Subject)
-                newsCredSubKWrdD = re.search(r'authenticator', inboxMail.Subject)
+                newsCredSubKWrdC = re.search(r'authentication', inboxMail.Subject) #Used
+                newsCredSubKWrdD = re.search(r'authenticator', inboxMail.Subject)  #Used
 
-                newsCredSubKWrdE = re.search(r'denied', inboxMail.Subject)
-                newsCredSubKWrdF = re.search(r'Shell Brand Applications', inboxMail.Subject)
+                newsCredSubKWrdE = re.search(r'denied', inboxMail.Subject)         #Used
+                newsCredSubKWrdF = re.search(r'Shell Brand Applications', inboxMail.Subject)  #Used
 
-                newsCredSubKWrdG = re.search(r'login', inboxMail.Subject)
-                newsCredSubKWrdH = re.search(r'account', inboxMail.Subject)
+                newsCredSubKWrdG = re.search(r'login', inboxMail.Subject)  #Used
+                newsCredSubKWrdH = re.search(r'account', inboxMail.Subject) #Used
 
                 newsCredSubKWrdI = re.search(r'Lost', inboxMail.Subject)
                 newsCredSubKWrdJ = re.search(r'mfa$', inboxMail.Subject)
 
                 newsCredSubKWrdK = re.search(r'MFA Support', inboxMail.Subject)
 
-                newsCredSender = re.search(r'creativehub@shell.com', inboxMail.SenderEmailAddress)
-
-
-                if newsCredSender:
+                if  newsCredSenderDEMO or newsCredSenderDEMOATShell:
                     print('First checking Mail sender :: ')
-                    print(newsCredSender)
+                    print('Sender Mail:\t', newsCredSenderDEMO or newsCredSenderDEMOATShell)
                     break
-
-
 
 
                 #if mfaSrch:
@@ -99,13 +99,13 @@ def usrInbox():
                 #    print(mailIDs)
                 #    print(newsCredSender)
 
-                if newsCredSubMFA or newsCredSubKWrdA:
-                    print('Match found MFA/ mfa keyword >>')
-                    print(newsCredSubMFA.group() or newsCredSubKWrdA.group())
+                elif newsCredSubMFA or newsCredSubKWrdA:
+                    print('Match found MFA/ mfa keyword in Subject: >>')
+                    print("Keyword match found: \t",newsCredSubMFA.group() or newsCredSubKWrdA.group())
                     mailIDs = re.findall('\S+@\S+', inboxMail.body)
                     print(mailIDs)
-                    print(newsCredSender)
-
+                    print('Sender Mail:\t', newsCredSender)
+                    break
 
 
                 #elif mfaSrch_small:
@@ -118,20 +118,49 @@ def usrInbox():
                 #    break
 
                 elif  newsCredSubApp or newsCredSubKWrdB:
-                    print('Match found APP Name keyword >>')
-                    print(newsCredSubMFA.group() or newsCredSubKWrdA.group())
+                    print('Match found APP Name keyword in Subject: >>')
+                    print("Keyword match found: \t", newsCredSubMFA.group() or newsCredSubKWrdA.group())
                     mailIDs = re.findall('\S+@\S+', inboxMail.body)
                     print(mailIDs)
-                    print(newsCredSender)
+                    print('Sender Mail:\t', newsCredSender)
+                    break
 
+                elif newsCredSubKWrdC or newsCredSubKWrdD:
+                    print('Match found APP Name keyword in Subject: Autheticator KW >>')
+                    print("Keyword match found: \t", newsCredSubMFA.group() or newsCredSubKWrdA.group())
+                    mailIDs = re.findall('\S+@\S+', inboxMail.body)
+                    print(mailIDs)
+                    print('Sender Mail:\t', newsCredSender)
+                    break
 
+                elif newsCredSubKWrdE or newsCredSubKWrdF:
+                    print('Match found APP Name keyword in Subject: Denied/ Shell Brand Application >>')
+                    print("Keyword match found: \t", newsCredSubMFA.group() or newsCredSubKWrdA.group())
+                    mailIDs = re.findall('\S+@\S+', inboxMail.body)
+                    print(mailIDs)
+                    print('Sender Mail:\t', newsCredSender)
+                    break
+
+                elif newsCredSubKWrdG or newsCredSubKWrdH:
+                    print('Match found APP Name keyword in Subject: login/ Account  >>')
+                    print("Keyword match found: \t", newsCredSubKWrdG.group() or newsCredSubKWrdH.group())
+                    mailIDs = re.findall('\S+@\S+', inboxMail.body)
+                    print(mailIDs)
+                    print('Sender Mail:\t', newsCredSender)
+                    break
+
+                elif newsCredSubKWrdI or newsCredSubKWrdJ:
+                    print('Match found APP Name keyword in Subject: lost/ $mfa  >>')
+                    print("Keyword match found: \t", newsCredSubKWrdG.group() or newsCredSubKWrdH.group())
+                    mailIDs = re.findall('\S+@\S+', inboxMail.body)
+                    print(mailIDs)
+                    print('Sender Mail:\t', newsCredSender)
+                    break
+                #break
+            #break
         break
 
-
-
-
     print('\tEOF')
-
 
 if __name__ == '__main__':
     usrInbox()
