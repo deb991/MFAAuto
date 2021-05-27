@@ -6,7 +6,11 @@ __NB__ = 'For more information, please see github page & all commit details.'
 __CipherSig__ = 'This project & all associate files are encrypted under PBEncryption cryptography. Another details will be available at the end of this pgogram.'
 
 import os
+import xml.dom.minidom
 import xml.etree.cElementTree as ET
+
+from mailMonitor import *
+
 
 def analystCred():
     root = ET.Element("root")
@@ -22,14 +26,21 @@ def analystCred():
     tree.write("main.xml")
 
 def mailExtrct():
-    root = ET.Element("root")
-    doc = ET.SubElement(root, "doc")
+    #Creating xml file:
+    os.chdir('..\\res')
+    mailTracker = xml.dom.minidom.parse("MailIDTracker.xml");
 
-    ET.SubElement(doc, "mailID", usrMail='').text = "debashis.d.biswas@shell.com"
-    ET.SubElement(doc, "DistributionList", DL='').text = "somwpro@shell.com"
+    cot = mailTracker.getElementsByTagName("")
 
-    tree = ET.ElementTree(root)
+    print("%d :" )
 
-    os.chdir("..\\res")
+    MailID = mailTracker.createElement('mail_ID')
+    MailID.setAttribute("name", newsCredSender)
 
-    tree.write("analystCred.xml")
+    #mailTracker.firstChild.appendChild(mailTracker)
+    print(" ")
+
+
+
+if __name__ == '__main__':
+    mailExtrct()

@@ -29,10 +29,6 @@ def usrOps():
     #enterButt =
     browser.find_element_by_xpath("/html/body/section/main/div/form/div[2]/button").send_keys(Keys.ENTER)
 
-
-
-
-
 #browser.quit()
 
 if __name__ == '__main__':
