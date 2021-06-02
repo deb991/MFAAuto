@@ -16,7 +16,7 @@ outlook = win32.Dispatch ( 'outlook.application' )
 mail = outlook.CreateItem ( 0 )
 mail.To = 'debashis.d.biswas@shell.com'
 
-mail.Subject = 'Creative Hub Access Issue | MFA Token expired'
+mail.Subject = 'Re:Creative Hub Access Issue | MFA Token expired'
 
 (mail.body) = 'Hello team,\n\n Good day!\nRequesting for your support to issue @karbasetti@blueskydefna.com a new ' \
               'MFA token to be able to access Creative Hub. She was able to register as an external user but her ' \

@@ -20,7 +20,7 @@ def qusUsr():
     #mail.Cc = 'INNNIA@SHELL.com; Kishalaya.Nath@shell.com'
     #mail.Cc = 'receipents; receipents'
     #mail.Bcc = ' P.PallaviBharti@shell.com'
-    mail.Subject = '<<User Information check, associated to MFA authentication>>' + today.strftime("%d/%m/%Y")
+    mail.Subject = 'Re:<<Questioner>> || ' + today.strftime("%d/%m/%Y") + '||'
 
     (mail.body) = 'Hi,\n\n Kindly provide us below information ' \
                   'associated to MFA authentication.\n' \

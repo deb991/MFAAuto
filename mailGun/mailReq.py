@@ -5,22 +5,24 @@ __URL__ = 'https://github.com/deb991/'
 __NB__ = 'For more information, please see github page & all commit details.'
 __CipherSig__ = 'This project & all associate files are encrypted under PBEncryption cryptography. Another details will be available at the end of this pgogram.'
 
-from datetime import datetime, date
+from datetime import *
 
+# from datetime import datetime, date
 import win32com.client as win32
 
 now = datetime.now()
+from time import strftime
 
 
 def mailIDReq():
-    today = date.today()
+    #today = date.today()
     outlook = win32.Dispatch ( 'outlook.application' )
     mail = outlook.CreateItem ( 0 )
     mail.To = 'debashis.d.biswas@shell.com'
     #mail.Cc = 'INNNIA@SHELL.com; Kishalaya.Nath@shell.com'
     #mail.Cc = 'receipents; receipents'
     #mail.Bcc = ' P.PallaviBharti@shell.com'
-    mail.Subject = '<<Mail ID request to provide from USER>>' + today.strftime("%d/%m/%Y")
+    mail.Subject = '<<Mail ID request to provide from USER>>' + strftime("%d/%m/%Y")
 
     # F = open(os.path.expanduser(os.getenv('USERPROFILE')) + 'path')
     # line = F.read()
